@@ -1,0 +1,2 @@
+# Write your MySQL query statement below
+SELECT name FROM (SELECT name, (SELECT COUNT(e2.managerId) FROM Employee e2 WHERE e1.id = e2.managerId) AS direct_reports FROM Employee e1) dr WHERE direct_reports > 4;
