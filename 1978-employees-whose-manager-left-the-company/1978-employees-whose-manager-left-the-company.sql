@@ -1,0 +1,2 @@
+# Write your MySQL query statement below
+SELECT employee_id FROM (SELECT * FROM Employees e1 WHERE e1.manager_id IS NOT NULL GROUP BY e1.employee_id HAVING (SELECT e2.employee_id FROM Employees e2 WHERE e2.employee_id = e1.manager_id) IS NULL) e3 WHERE salary < 30000 ORDER BY employee_id;
