@@ -1,0 +1,2 @@
+# Write your MySQL query statement below
+SELECT best_customers.customer_id FROM (SELECT customer_id, COUNT(DISTINCT(product_key)) as purchase FROM Customer GROUP BY customer_id HAVING purchase = (SELECT COUNT(product_key) AS total_products FROM Product)) AS best_customers;
